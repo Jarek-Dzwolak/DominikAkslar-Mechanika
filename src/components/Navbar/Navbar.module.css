@@ -1,0 +1,133 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  transition: var(--transition);
+  padding: 1rem 0;
+}
+
+.scrolled {
+  background-color: var(--secondary-color);
+  box-shadow: var(--box-shadow);
+  padding: 0.5rem 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--text-color);
+  z-index: 100;
+}
+
+.logo h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.logo p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.bar {
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-color);
+  transition: var(--transition);
+}
+
+.toggle .bar.active:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.toggle .bar.active:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle .bar.active:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  padding: 2rem;
+}
+
+.menu.active {
+  right: 0;
+}
+
+.menu li {
+  margin: 1.5rem 0;
+}
+
+.menu a {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .toggle {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .menu li {
+    margin: 0 1rem;
+  }
+
+  .menu a {
+    font-size: 1rem;
+  }
+}
